@@ -23,6 +23,7 @@
 #include "inv_mpu_dmp_motion_driver.h"
 #include "dmpKey.h"
 #include "dmpmap.h"
+#include "stm32_mpu6050.h"
 
 /* The following functions must be defined for this platform:
  * i2c_write(unsigned char slave_addr, unsigned char reg_addr,
@@ -32,7 +33,7 @@
  * delay_ms(unsigned long num_ms)
  * get_ms(unsigned long *count)
  */
-#error  Gyro driver is missing the system layer implementations.
+//#error  Gyro driver is missing the system layer implementations.
 
 /* These defines are copied from dmpDefaultMPU6050.c in the general MPL
  * releases. These defines may change for each DMP image, so be sure to modify

@@ -23,6 +23,7 @@
 #include <string.h>
 #include <math.h>
 #include "inv_mpu.h"
+#include "stm32_mpu6050.h"
 
 /* The following functions must be defined for this platform:
  * i2c_write(unsigned char slave_addr, unsigned char reg_addr,
@@ -36,7 +37,7 @@
  * fabsf(float x)
  * min(int a, int b)
  */
-#error  Gyro driver is missing the system layer implementations.
+//#error  Gyro driver is missing the system layer implementations.
 
 //#if !defined MPU6050 && !defined MPU9150 && !defined MPU6500 && !defined MPU9250
 //#error  Which gyro are you using? Define MPUxxxx in your compiler options.
@@ -423,7 +424,8 @@ int mpu_read_reg(unsigned char reg, unsigned char *data)
  *  @param[in]  int_param   Platform-specific parameters to interrupt API.
  *  @return     0 if successful.
  */
-int mpu_init(struct int_param_s *int_param)
+//int mpu_init(struct int_param_s *int_param)
+int mpu_init(void)
 {
     unsigned char data[6];
 
@@ -472,8 +474,8 @@ int mpu_init(struct int_param_s *int_param)
     if (mpu_configure_fifo(0))
         return -1;
 
-    if (int_param)
-        reg_int_cb(int_param);
+    //if (int_param)
+    //    reg_int_cb(int_param);
 
     /* Already disabled by setup_compass. */
     if (mpu_set_bypass(0))

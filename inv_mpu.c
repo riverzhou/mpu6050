@@ -105,9 +105,9 @@ static inline int reg_int_cb(struct int_param_s *int_param)
 #error  Gyro driver is missing the system layer implementations.
 #endif
 
-#if !defined MPU6050 && !defined MPU9150 && !defined MPU6500 && !defined MPU9250
-#error  Which gyro are you using? Define MPUxxxx in your compiler options.
-#endif
+//#if !defined MPU6050 && !defined MPU9150 && !defined MPU6500 && !defined MPU9250
+//#error  Which gyro are you using? Define MPUxxxx in your compiler options.
+//#endif
 
 /* Time for some messy macro work. =]
  * #define MPU9150

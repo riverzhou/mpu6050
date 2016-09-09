@@ -28,6 +28,7 @@
 #define INV_XYZ_ACCEL   (0x08)
 #define INV_XYZ_COMPASS (0x01)
 
+#if 0
 struct int_param_s {
 #if defined EMPL_TARGET_MSP430 || defined MOTION_DRIVER_TARGET_MSP430
     void (*cb)(void);
@@ -40,6 +41,7 @@ struct int_param_s {
     void *arg;
 #endif
 };
+#endif
 
 #define MPU_INT_STATUS_DATA_READY       (0x0001)
 #define MPU_INT_STATUS_DMP              (0x0002)

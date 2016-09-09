@@ -390,7 +390,7 @@ int mpu_reg_dump(void)
             continue;
         if (i2c_read(st.hw->addr, ii, 1, &data))
             return -1;
-        log_i("%#5x: %#5x\r\n", ii, data);
+        //log_i("%#5x: %#5x\r\n", ii, data);
     }
     return 0;
 }
